@@ -1,61 +1,67 @@
+<% 
+    # ruby home 
+%>
+
 <!DOCTYPE html>
+
 <html>
 <head>
-    <title>EWB-UCF | Engineers Without Borders - University of Central Florida</title>
+	<title>EWB-UCF | Engineers Without Borders - University of Central Florida</title>
 </head>
-<nav class="home">
-    <img src="/images/logo3.png" width="28%"/>
-    <ul>
-        <li><a href="/">       Home        </a></li>
-        <li><a href="/AboutUs"> International Projects    </a></li>
-        <li><a href="#">Local Projects  </a>
-            <ul>
-            <span>
-                <li><a href="#">Exec Board</a></li>
-                <li><a href="#">Intl Project Team</a></li>
-                <li><a href="#">Local Project Team</a></li>
-                <li><a href="#">Software Team</a></li>
-                <li><a href="#">Alumni</a></li>
-                <li><a href="#">Our Partners</a></li>
-                <li><a href="#">Our Sponsors</a></li>
-
-            </span>         
-            </ul>   
-        </li>
-        
-        <li><a href="#">Workshops and Seminars</a>
-            <ul>
-                <li><a href="#">Circuit Series</a></li>
-                <li><a href="#">Programming Series</a></li>
-                <li><a href="#">First Aid Anywhere Series</a></li>
-                <li><a href="#">Fabrication Series</a></li>
-                <li><a href="#">Scraps to Gold Series</a></li>
-            </ul>
-        </li>       
-        <li><a href="#">Apply/Volunteer       </a>
-        </li>
-        <li><a href="#">Member Profiles</a>
-        </li>
-        <li><a href="#">Contact</a>
-        </li>
-
-        <li><a href="#">Login     </a></li>       
-    </ul>
-</nav>
 <body>
+    <nav class="home">
+	    <a href="/"><%= image_tag("logo3.png") %></a>
+	    <ul>
+		    <li><a href="/AboutUs"> About Us    </a></li>
+		    <li><a href="#">        Our People  </a>
+			    <ul>
+				    <li><a href="#"> Exec Board	       </a></li>
+				    <li><a href="#"> Intl Project Team  </a></li>
+				    <li><a href="#"> Local Project Team </a></li>
+				    <li><a href="#"> Software Team	   </a></li>
+				    <li><a href="#"> Alumni		       </a></li>
+				    <li><a href="#"> Our Partners	   </a></li>	
+			    </ul>	
+		    </li>
+		    <li><a href="#">        Our Projects </a>
+			    <ul>
+				    <li><a href="#">International Projects</a>
+					    <ul>
+						    <li><a href="#">Dominican Republic</a></li>
+						    <li><a href="#">Haiti (complete)</a></li>
+					    </ul>
+                    </li>
+				    <li><a href="#">Local Projects</a>
+                        <ul>
+    						<li><a href="#">Bithlo Aquaponics</a></li>
+	    					<li><a href="#">PBP Rainwater Catchment</a></li>
+		    			</ul>
+                    </li>
+				    <li><a href="#">Software Projects</a></li>
+				    <li><a href="#">Other Projects</a>
+                        <ul>
+						    <li><a href="#">Weather Station</a></li>
+						    <li><a href="#">Solar Water Filter</a></li>
+                            <li><a href="#">Rube Goldberg</a></li>
+                            <li><a href="#">3D Printer</a></li>
+					    </ul>
+                    </li>
+	            </ul>
+		    </li>		
+		    <li><a href="#">Media       </a>
+			    <ul>
+				    <li><a href="#">Photos</a></li>
+				    <li><a href="#">Videos</a></li>
+			    </ul>
+		    </li>
+		    <li><a href="#">Events      </a></li>
+		    <li><a href="#">Contact     </a></li>		
+	    </ul>
+    </nav>
 
-    <div id="content">
-        <h2>About Us</h2>
-        <p>Our <b>MISSION</b> – EWB-USA supports community-driven development programs worldwide by collaborating with local partners to design and implement sustainable engineering projects, while creating transformative experiences and responsible leaders.</p>
-        <p>Our <b>MEMBERSHIP</b> consists of professionals and students from a variety of professions including engineering, public health, anthropology and business. Through its projects and programs, EWB-USA provides innovative professional educational opportunities that provide a global perspective. We are passionate people, with over 250 dedicated chapters, including university chapters on more than 180 campuses throughout the United States. UPDATE ME!</p>
-        <p>Our <b>VISION</b> is a world in which the communities we serve have the capacity to sustainably meet their basic human needs, and that our members have enriched global perspectives through the innovative professional educational opportunities that the EWB-USA program provides.</p>
-
-    </div> <!-- content -->
-
-
-    <footer class="home">
-        Copyright FIX ME 2009 by Engineers Without Borders - UCF
+	<footer class="home">
+	    Copyright &copy 2014 by Engineers Without Borders - UCF
     </footer>
-
 </body>
 </html>
+
