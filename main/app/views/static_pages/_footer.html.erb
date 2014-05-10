@@ -1,0 +1,12 @@
+<% 
+    # ruby home 
+    if request.url == "http://websitemain:3000/static_pages/home"
+    	footer_class = "home"
+    else
+    	footer_class = "not-home"
+    end
+%>
+
+<footer class="<%= footer_class %>">
+	    Copyright &copy 2014 by Engineers Without Borders - UCF
+</footer>
