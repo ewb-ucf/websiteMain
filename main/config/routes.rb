@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :about
+  resources :exec_board
 
   match '/register', to:'users#new',  via:'get'
   resources :users
