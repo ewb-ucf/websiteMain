@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
 
   resources :about
+
+  # Our People
   resources :exec_board
+  resources :intl_project_team
+  resources :local_project_team
+  resources :software_team
+  resources :alumni
+
 
   match '/register', to:'users#new',  via:'get'
   resources :users
