@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'static_pages/home'
 
   resources :about
+
+  match '/register', to:'users#new',  via:'get'
+  resources :users
 
   match '/contacts',  to:'contacts#new',  via:'get'
   resources "contacts", only: [:new, :create]

@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 # Custom added GEMS!
 gem 'mail_form'
 gem 'simple_form'
+gem 'protected_attributes'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
