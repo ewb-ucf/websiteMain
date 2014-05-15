@@ -342,7 +342,7 @@ nav ul ul:hover li:last-child{
 
 nav ul ul ul{
     display:                    none;
-    width:                      100%;
+    min-width:                      100%;
     height:                     auto;
     margin:                     0px 0px;
     padding:                    auto;
@@ -367,10 +367,13 @@ nav.not-home ul ul li:hover > ul,
 nav.not-home ul ul ul:hover{
     display:                    block;
     position:                   absolute;
-    top:                        70px;
+    padding:                    12px 0px 0px 0px;
+    top:                        42px;
     left:                       0px;
+    border:                     1px solid #c2cd23;
+    border-bottom:              3px solid #c2cd23;
     border-top:                 2px solid rgba(255,0,0,0);
-    border-bottom:              2px solid #c2cd23;
+    border-radius:              0px 0px 10px 10px;
     transition:                 all .5s;
     -webkit-transition:         all .5s;
 }
