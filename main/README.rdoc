@@ -1,3 +1,11 @@
+
+== Getting Started:
+
+Developers need to cp config/app_secret.yml as this is not provided in the opensource version
+
+
+
+
 == README
 
 This README would normally document whatever steps are necessary to get the

@@ -4,7 +4,14 @@ source 'https://rubygems.org'
 # Custom added GEMS!
 gem 'mail_form'
 gem 'simple_form'
+
+# For YML security MCKINNLEY GO BACK AND ADD THIS
+# gem "econfig", require: "econfig/rails"
+
+# This is for rails 3 but should be updated to rails 4 standards
 gem 'protected_attributes'
+
+gem "cancan"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

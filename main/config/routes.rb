@@ -1,22 +1,80 @@
 Rails.application.routes.draw do
 
-  get 'static_pages/home'
+# Home Page
+match '/', to:'static_pages#home', via:'get' 
+  
+# About Us Tab
+resources :about
 
-  resources :about
+# Our People 
+match '/members', to:'users#show',  via:'get'
+  resources :users do
+    resources :exec_board
+    resources :intl_project_team
+    resources :local_project_team
+    resources :software_team
+    resources :alumni    
+  end
+# match '/members/exec_board', to:'users#show',  via:'get'
+# match '/members/intl_project_team', to:'users#show',  via:'get'
+# match '/members/local_project_team', to:'users#show',  via:'get'
+# match '/members/software_team', to:'users#show',  via:'get'
+# match '/members/alumni', to:'users#show',  via:'get'
 
-  # Our People
-  resources :exec_board
-  resources :intl_project_team
-  resources :local_project_team
-  resources :software_team
-  resources :alumni
+# namespace :users do
+  # resources :docs
 
+# Our Projects
+# match '/projects',  to:'X#X',  via:'get'
 
-  match '/register', to:'users#new',  via:'get'
-  resources :users
+    # Local Projects (bithlo, rainwater catchment)
+    # match '/projects/local',  to:'X#X',  via:'get'
 
-  match '/contacts',  to:'contacts#new',  via:'get'
+    # International Projects (weather station, dr)
+    # match '/projects/international',  to:'X#X',  via:'get'
+
+    # Software Projects
+    # match '/projects/software',  to:'X#X',  via:'get'
+
+    # Other Projects
+    # match '/projects',  to:'X#X',  via:'get'
+
+# Events
+match '/events',  to:'events#show',  via:'get'
+
+  # Workshops
+  # match '/workshops',  to:'X#X',  via:'get'
+
+  # Lectures
+  # match '/lectures',  to:'X#X',  via:'get'
+
+# Media (photos and videos)
+# match '/media',  to:'X#X',  via:'get' 
+
+  # Photos (categorized by event+date)
+  # match '/media/photos',  to:'X#X',  via:'get'
+    # resources :photos 
+
+  # Videos (categorized by event+date)
+  # match '/media/videos',  to:'X#X',  via:'get'
+    # resources :videos
+
+# Contact 
+# (have a drop down menu with options of who to send to general, localpm, software, etc)
+match '/contact',  to:'contacts#new',  via:'get'
   resources "contacts", only: [:new, :create]
+
+# Other URLS and links
+
+  # Applications
+  match '/apply/membership',  to:'users#new',  via:'get' 
+    resources :users
+  # match 'apply/international-project-team',  to:'X#X',  via:'get' 
+  # match 'apply/local-project-team',  to:'X#X',  via:'get' 
+  # match 'apply/executive-board',  to:'X#X',  via:'get' 
+
+  # User Profiles (gets profile of currently logged in user)
+  # get 'profile', to: 'users#show' 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

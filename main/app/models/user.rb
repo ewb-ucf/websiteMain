@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 	require 'digest/md5'
 
+	has_and_belongs_to_many :roles
+
 	attr_accessible :email, :first_name, :last_name, :password, :password_confirmation, :gender, :pid
 	before_save :encrypt_password
 
@@ -36,4 +38,8 @@ class User < ActiveRecord::Base
 	def encrypt_password
 		self.password = Digest::MD5.hexdigest(password)
 	end
+end
+
+class Role < ActiveRecord::Base
+	has_and_belongs_to_many :users
 end
