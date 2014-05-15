@@ -7,8 +7,8 @@ match '/', to:'static_pages#home', via:'get'
 resources :about
 
 # Our People 
-match '/members', to:'users#show',  via:'get'
-  resources :users do
+match '/members', to:'members#show',  via:'get'
+  resources :members do
     resources :exec_board
     resources :intl_project_team
     resources :local_project_team
@@ -67,8 +67,8 @@ match '/contact',  to:'contacts#new',  via:'get'
 # Other URLS and links
 
   # Applications
-  match '/apply/membership',  to:'users#new',  via:'get' 
-    resources :users
+  match '/apply/membership',  to:'members#new',  via:'get' 
+    resources :members
   # match 'apply/international-project-team',  to:'X#X',  via:'get' 
   # match 'apply/local-project-team',  to:'X#X',  via:'get' 
   # match 'apply/executive-board',  to:'X#X',  via:'get' 
