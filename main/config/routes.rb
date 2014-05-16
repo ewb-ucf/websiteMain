@@ -4,60 +4,62 @@ Rails.application.routes.draw do
 match '/', to:'static_pages#home', via:'get' 
   
 # About Us Tab
-resources :about
+match '/about', to:'static_pages#about', via:'get' 
+
+# Our People --> Our Partners
+match '/partners', to:'static_pages#partners', via:'get' 
 
 # Our People 
 match '/members', to:'members#show',  via:'get'
-  resources :members do
-    resources :exec_board
-    resources :intl_project_team
-    resources :local_project_team
-    resources :software_team
-    resources :alumni    
-  end
-# match '/members/exec_board', to:'users#show',  via:'get'
-# match '/members/intl_project_team', to:'users#show',  via:'get'
-# match '/members/local_project_team', to:'users#show',  via:'get'
-# match '/members/software_team', to:'users#show',  via:'get'
-# match '/members/alumni', to:'users#show',  via:'get'
+  resources :members
 
-# namespace :users do
-  # resources :docs
+  # Exec Board
+  match '/exec_board', to:'members#exec_board',  via:'get'
+
+  # International Project Team
+  match '/intl_project_team', to:'members#intl_project_team',  via:'get'
+
+  # Local Project Team
+  match '/local_project_team', to:'members#local_project_team',  via:'get'
+
+  # Software Team
+    match '/software_team', to:'members#software_team',  via:'get'
+
+  # Alum
+  match '/alum', to:'members#alum',  via:'get'
 
 # Our Projects
-# match '/projects',  to:'X#X',  via:'get'
+match '/projects',  to:'projects#show',  via:'get'
 
     # Local Projects (bithlo, rainwater catchment)
-    # match '/projects/local',  to:'X#X',  via:'get'
+    match '/projects/local',  to:'projects#local',  via:'get'
 
     # International Projects (weather station, dr)
-    # match '/projects/international',  to:'X#X',  via:'get'
+    match '/projects/international',  to:'projects#international',  via:'get'
 
     # Software Projects
-    # match '/projects/software',  to:'X#X',  via:'get'
+    match '/projects/software',  to:'projects#software',  via:'get'
 
     # Other Projects
-    # match '/projects',  to:'X#X',  via:'get'
+    match '/projects/other',  to:'projects#other',  via:'get'
 
 # Events
 match '/events',  to:'events#show',  via:'get'
 
   # Workshops
-  # match '/workshops',  to:'X#X',  via:'get'
+  match '/workshops',  to:'events#workshops',  via:'get'
 
   # Lectures
-  # match '/lectures',  to:'X#X',  via:'get'
+  match '/lectures',  to:'events#lectures',  via:'get'
 
 # Media (photos and videos)
-# match '/media',  to:'X#X',  via:'get' 
+match '/media',  to:'medias#show',  via:'get' 
 
   # Photos (categorized by event+date)
-  # match '/media/photos',  to:'X#X',  via:'get'
-    # resources :photos 
+  match '/media/photos',  to:'medias#photos',  via:'get'
 
   # Videos (categorized by event+date)
-  # match '/media/videos',  to:'X#X',  via:'get'
-    # resources :videos
+  match '/media/videos',  to:'medias#videos',  via:'get'
 
 # Contact 
 # (have a drop down menu with options of who to send to general, localpm, software, etc)
@@ -67,15 +69,24 @@ match '/contact',  to:'contacts#new',  via:'get'
 # Other URLS and links
 
   # Applications
-  match '/apply/membership',  to:'members#new',  via:'get' 
-    resources :members
-  # match 'apply/international-project-team',  to:'X#X',  via:'get' 
-  # match 'apply/local-project-team',  to:'X#X',  via:'get' 
-  # match 'apply/executive-board',  to:'X#X',  via:'get' 
+  match '/applications/membership',  to:'members#new',  via:'get' 
+  match '/applications/intl_project_team',  to:'members#new_international',  via:'get' 
+  match '/applications/local_project_team',  to:'members#new_local',  via:'get' 
+  match '/applications/software_team',  to:'members#new_software',  via:'get' 
+  match '/applications/executive_board',  to:'members#new_exec_board',  via:'get' 
+
+  # Forms
+  match '/forms/project_proposal',  to:'projects#new',  via:'get'
+  match '/forms/event_proposal',  to:'events#new',  via:'get'
+  # match '/forms/order',  to:'X#new',  via:'get'
+
 
   # User Profiles (gets profile of currently logged in user)
   # get 'profile', to: 'users#show' 
 
+
+
+#=======================================================================================#
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

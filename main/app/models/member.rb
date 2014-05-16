@@ -1,9 +1,15 @@
 class Member < ActiveRecord::Base
 	require 'digest/md5'
 
-	has_and_belongs_to_many :roles
+	# This is to change :id to a username
+	# def to_param
+	# 	username
+	# end	
 
-	attr_accessible :email, :first_name, :last_name, :password, :password_confirmation, :gender, :pid
+	has_and_belongs_to_many :roles
+	has_many :projects 
+
+	attr_accessible :email, :first_name, :last_name, :password, :password_confirmation, :gender, :pid, :aboutme, :skills, :experience, :phone
 	before_save :encrypt_password
 
 	validates :first_name,
@@ -34,6 +40,16 @@ class Member < ActiveRecord::Base
 	validates :email,
 		:presence => TRUE,
 		:uniqueness => TRUE
+
+	validates :aboutme,
+		:presence => TRUE,
+		:uniqueness => TRUE
+
+	validates :skills,
+		:presence => TRUE,
+		:uniqueness => TRUE
+
+	# Anticipated Graduation
 
 	def encrypt_password
 		self.password = Digest::MD5.hexdigest(password)
