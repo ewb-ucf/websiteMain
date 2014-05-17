@@ -1,17 +1,20 @@
 <% 
-    # if home page 
-    nav_class = current_page?('/') ? 'home' : 'not-home'
+    # ruby home 
+    if request.url == "http://websitemain:3000"
+    	nav_class = "home"
+    else
+    	nav_class = "not-home"
+    end
 %>
 
 <nav class="<%= nav_class%>">
 
-	<a href="/"><%= image_tag("logo3.png") %></a>
+	<a href="/static_pages/home"><%= image_tag("logo3.png") %></a>
 	<ul>
 	    <li><a href="/about"> About Us    </a></li>
 
 	    <li><a href="#"> Our People </a>
 		    <ul>
-		    	<!--<li><%#= link_to "Exec", controller: "e" %> </li>-->
 			    <li><a href="/exec_board">         Executive Board    </a></li>
 			    <li><a href="/intl_project_team">  Intl Project Team  </a></li>
 			    <li><a href="/local_project_team"> Local Project Team </a></li>
