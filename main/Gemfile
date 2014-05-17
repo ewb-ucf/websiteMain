@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'mail_form'
 gem 'simple_form'
 
-# For YML security MCKINNLEY GO BACK AND ADD THIS
+# For YML security MCKINNLEY GO BACK AND ADD This
 # gem "econfig", require: "econfig/rails"
 
 # This is for rails 3 but should be updated to rails 4 standards
