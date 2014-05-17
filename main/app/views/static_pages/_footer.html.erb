@@ -1,10 +1,6 @@
 <% 
-    # ruby home 
-    if request.url == "http://websitemain:3000/static_pages/home"
-    	footer_class = "home"
-    else
-    	footer_class = "not-home"
-    end
+	# if home page 
+    footer_class = current_page?('/') ? 'home' : 'not-home' 
 %>
 
 <footer class="<%= footer_class %>">
