@@ -1,58 +1,53 @@
 <% 
     # if home page 
-    nav_class = current_page?('/') ? 'home' : 'not-home'
+    home = current_page?('/') ? 'home' : 'not-home'
+
 %>
 
-<nav class="<%= nav_class%>">
+<nav class="<%= home %>">
+	
+    <% # main logo for navbar %>
+    <%= link_to image_tag("logo3.png"),  '/' %>
 
-	<a href="/"><%= image_tag("logo3.png") %></a>
+
 	<ul>
-	    <li><a href="/about"> About Us    </a></li>
+        <%= raw li 'About', '/about' %>
 
-	    <li><a href="#"> Our People </a>
+        <li> <%= link_to 'Our People', '#' %>
+    	    <ul>
+                <%= raw li 'Executive Board'   , '/exec_board' %>
+                <%= raw li 'Local Project Team', '/local_project_team' %>
+                <%= raw li 'Local Project Team', '/local_project_team' %>
+                <%= raw li 'Software Team'     , '/software_team'      %>
+                <%= raw li 'Alumni'            , '/alumni'             %>
+                <%= raw li 'Our Partners'      , '/partners'           %>
+    	    </ul>	
+        </li>
+
+	    <li> <%= link_to 'Our Projects', '#' %>
 		    <ul>
-		    	<!--<li><%#= link_to "Exec", controller: "e" %> </li>-->
-			    <li><a href="/exec_board">         Executive Board    </a></li>
-			    <li><a href="/intl_project_team">  Intl Project Team  </a></li>
-			    <li><a href="/local_project_team"> Local Project Team </a></li>
-			    <li><a href="/software_team">      Software Team	  </a></li>
-			    <li><a href="/alumni">             Alumni		      </a></li>
-			    <li><a href="#"> Our Partners	   </a></li>	
-		    </ul>	
-	    </li>
-	    <li><a href="#"> Our Projects </a>
-		    <ul>
-			    <li><a href="#"> International Projects </a>
-				    <ul>
-					    <li><a href="#"> Dominican Republic </a></li>
-					    <li><a href="#"> Haiti (complete) </a></li>
-				    </ul>
-                </li>
-			    <li><a href="#"> Local Projects </a>
-				    <ul>
-					    <li><a href="#"> Bithlo Aquaponics </a></li>
-					    <li><a href="#"> PBP Rainwater Catchment </a></li>
-				    </ul>
-                </li>
-			    <li><a href="#">Software Projects</a></li>
-			    <li><a href="#">Other Projects</a>
-                    <ul>
-					    <li><a href="#">Weather Station</a></li>
-					    <li><a href="#">Solar Water Filter</a></li>
-                        <li><a href="#">Rube Goldberg</a></li>
-                        <li><a href="#">3D Printer</a></li>
-				    </ul>
-                </li>
+                <%= raw li 'International Projects', '/projects/international' %>
+                <%= raw li 'Local Projects'        , '/projects/local'         %>
+                <%= raw li 'Software Projects'     , '/projects/software'      %>
+                <%= raw li 'Other Projects'        , '/projects/other'         %>
             </ul>
 	    </li>		
-	    <li><a href="#">Media       </a>
+
+	    <li> <%= link_to 'Media', '/media' %>
 		    <ul>
-			    <li><a href="#">Photos</a></li>
-			    <li><a href="#">Videos</a></li>
+                <%= raw li 'Photo', '/media/photo' %>
+                <%= raw li 'Video', '/media/video' %>
 		    </ul>
 	    </li>
-	    <li><a href="/events">Events      </a></li>
-	    <li><a href="#">Contact     </a></li>		
+
+	    <li><%= link_to "Events", '/events' %>
+            <ul>
+                <%= raw li 'Workshops', '/workshops' %>
+                <%= raw li 'Lectures' , '/lectures'  %>
+            </ul>
+        </li>
+	    
+        <%= raw li 'Contacts', '/contact' %>
     </ul>
 </nav>
 

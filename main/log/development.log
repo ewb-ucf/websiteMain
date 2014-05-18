@@ -14090,3 +14090,139 @@ ActionController::RoutingError (No route matches [GET] "/images/Profile%20Pic%20
   Rendered /home/admin48/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.6ms)
   Rendered /home/admin48/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
   Rendered /home/admin48/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.6ms)
+  [1m[36m (140.9ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (143.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateContacts (20140510223634)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "contacts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140510223634"]]
+  [1m[35m (210.3ms)[0m  commit transaction
+Migrating to CreateMembers (20140510230255)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "members" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140510230255"]]
+  [1m[35m (261.5ms)[0m  commit transaction
+Migrating to CreateProjects (20140516121652)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140516121652"]]
+  [1m[35m (228.7ms)[0m  commit transaction
+Migrating to CreateWorkshops (20140516122953)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  CREATE TABLE "workshops" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140516122953"]]
+  [1m[35m (139.4ms)[0m  commit transaction
+Migrating to CreateLectures (20140516123030)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "lectures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140516123030"]]
+  [1m[35m (195.5ms)[0m  commit transaction
+Migrating to CreateMedia (20140516124423)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "media" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140516124423"]]
+  [1m[35m (206.7ms)[0m  commit transaction
+Migrating to CreateApplications (20140516125036)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "applications" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140516125036"]]
+  [1m[35m (206.3ms)[0m  commit transaction
+Migrating to AddSkillsToMember (20140516162411)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "members" ADD "skills" text
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140516162411"]]
+  [1m[35m (163.7ms)[0m  commit transaction
+Migrating to AddExperienceToMember (20140516162808)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  ALTER TABLE "members" ADD "experience" text
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140516162808"]]
+  [1m[35m (162.5ms)[0m  commit transaction
+Migrating to AddPhoneToMember (20140516170435)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "members" ADD "phone" varchar(255)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140516170435"]]
+  [1m[35m (139.2ms)[0m  commit transaction
+Migrating to AddPersonalProjectsToMember (20140516171115)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "members" ADD "personalprojects" text
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140516171115"]]
+  [1m[35m (195.6ms)[0m  commit transaction
+Migrating to AddOtherInvolvementToMember (20140516171153)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "members" ADD "otherinvolvement" varchar(255)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140516171153"]]
+  [1m[35m (307.6ms)[0m  commit transaction
+Migrating to AddTimeDedicationToMember (20140516172015)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "members" ADD "timededication" varchar(255)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140516172015"]]
+  [1m[35m (150.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-17 22:27:18 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/_nav.html.erb (6.4ms)
+  Rendered static_pages/_footer.html.erb (1.2ms)
+  Rendered static_pages/home.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 1467ms (Views: 1439.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/contacts.css?body=1" for 127.0.0.1 at 2014-05-17 22:27:20 -0400
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-05-17 22:27:20 -0400
+
+
+Started GET "/assets/members.css?body=1" for 127.0.0.1 at 2014-05-17 22:27:20 -0400
+
+
+Started GET "/assets/lectures.css?body=1" for 127.0.0.1 at 2014-05-17 22:27:20 -0400
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-05-17 22:27:20 -0400
+
+
+Started GET "/assets/workshops.css?body=1" for 127.0.0.1 at 2014-05-17 22:27:20 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-17 22:27:20 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-17 22:27:20 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-17 22:27:20 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-17 22:27:20 -0400
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2014-05-17 22:27:20 -0400
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-05-17 22:27:20 -0400
+
+
+Started GET "/assets/members.js?body=1" for 127.0.0.1 at 2014-05-17 22:27:20 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-05-17 22:27:20 -0400
+
+
+Started GET "/assets/lectures.js?body=1" for 127.0.0.1 at 2014-05-17 22:27:20 -0400
+
+
+Started GET "/assets/workshops.js?body=1" for 127.0.0.1 at 2014-05-17 22:27:20 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-17 22:27:20 -0400
+
+
+Started GET "/assets/logo3.png" for 127.0.0.1 at 2014-05-17 22:27:20 -0400
+
+
+Started GET "/assets/haiti0.jpg" for 127.0.0.1 at 2014-05-17 22:27:20 -0400
