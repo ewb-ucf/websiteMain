@@ -37,7 +37,7 @@ match '/members', to:'static_pages#under_construction', via:'get'
     # match '/software_team', to:'static_pages#under_construction', via:'get' 
 
   # Alum
-  match '/alum', to:'members#alum',  via:'get'
+  match '/alumni', to:'members#alum',  via:'get'
   # match '/alum', to:'static_pages#under_construction', via:'get' 
 
 # Our Projects
