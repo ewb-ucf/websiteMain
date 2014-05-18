@@ -685,3 +685,35 @@ h5{
     font-size:                  14pt;
 }
 
+span.software{
+    display:                    inline-block; 
+    float:                      left;
+    margin:                     0px 0px;
+    padding:                    0px 10px 0px 10px;
+    background:                 rgba(255,255,255,0);
+    font-family:                ubuntu, Arial;
+    font-size:                  22pt;
+    color:                      #333;
+}
+
+div.software{
+    display:                    inline-block; 
+    float:                      left;
+    width:                      100%;
+    height:                     0px;
+    border-top:                 1px solid #333;
+    margin:                     1.5% 0px 0px 0px;
+}
+
+p.software{
+    display:                    inline-block; 
+    width:                      99%;
+    margin:                     20px 0px 20px 0px;
+    padding:                    0px 3% 0px 0px;
+    float:                      left;
+}
+
+div.software-container{
+    display:                    block;
+}
+

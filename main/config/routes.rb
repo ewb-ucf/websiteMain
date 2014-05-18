@@ -54,11 +54,11 @@ match '/projects', to:'static_pages#under_construction', via:'get'
 
     # Software Projects
     # match '/projects/software',  to:'projects#software',  via:'get'
-    match '/projects/software', to:'static_pages#under_construction', via:'get' 
+    match '/projects/software', to:'projects#software', via:'get' 
 
     # Other Projects
     # match '/projects/other',  to:'projects#other',  via:'get'
-    match '/projects/other', to:'static_pages#under_construction', via:'get' 
+    match '/projects/other', to:'projects#other', via:'get' 
 
 # Events
 # match '/events',  to:'events#show',  via:'get'
