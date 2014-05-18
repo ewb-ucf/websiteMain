@@ -23,7 +23,7 @@ module MembersHelper
             
             <br>
             <p class="profile">
-                <b>Class of \'' + grad + '</b>' + major + '&nbsp' * 3 +
+                <b>Class of \'' + grad + '</b> ' + major + '&nbsp' * 3 +
                 '<a href="#" target="_blank" class="resume"> View ' + first+ '\'s Resume</a>
             </p>
             <p class="bio">
