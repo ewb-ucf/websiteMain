@@ -12,8 +12,8 @@
 /db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
-/log/*.log
-/tmp
+# /log/*.log
+# /tmp
 
 # Ignore files with sensitive information (copy these yml files as needed from EWB's server)
 /config/app_secret.yml
