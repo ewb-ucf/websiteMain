@@ -633,3 +633,55 @@ p.about-ucf{
     float:                      left; 
     width:                      50%;
 }
+
+
+div.tile{
+    width:                      26%;
+    min-height:                 25%;
+    display:                    inline-block;
+    margin:                     2% 1%;
+    padding:                    2% 2% 1% 2%;
+    border:                     1px solid #000;
+    box-shadow:                 5px 5px 15px rgba(0,0,0,0.7);
+    transition:                 all .3s;
+    -webkit-transition:         all .3s;
+    text-align:                 center;
+    font-family:                ubuntu, Arial;
+    color:                      #333;
+}
+
+div.tile:hover{
+    width:                      26%;
+    padding:                    2% 2% 1% 2%;
+    border:                     1px solid #666;
+    box-shadow:                 5px 5px 25px rgba(0,0,0,0.7);
+    transition:                 all .3s;
+    -webkit-transition:         all .3s;
+}
+
+img.tile{
+
+}
+
+h4{
+    display:                    inline-block;
+    font-family:                ubuntu, Arial;
+    font-size:                  22pt;
+    font-weight:                bold;
+    padding:                    4px 0px 0px 0px;
+}
+
+h4.sub{
+    display:                    inline-block;
+    font-family:                ubuntu, Arial;
+    font-size:                  17pt;
+    font-weight:                normal;
+    padding:                    0px 0px 0px 0px;
+}
+
+h5{
+    display:                    inline-block;
+    font-family:                ubuntu, Arial;
+    font-size:                  14pt;
+}
+

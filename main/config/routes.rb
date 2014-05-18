@@ -46,11 +46,11 @@ match '/projects', to:'static_pages#under_construction', via:'get'
 
     # Local Projects (bithlo, rainwater catchment)
     # match '/projects/local',  to:'projects#local',  via:'get'
-    match '/projects/local', to:'static_pages#under_construction', via:'get' 
+    match '/projects/local', to:'projects#local', via:'get' 
 
     # International Projects (weather station, dr)
     # match '/projects/international',  to:'projects#international',  via:'get'
-    match '/projects/international', to:'static_pages#under_construction', via:'get' 
+    match '/projects/international', to:'projects#international', via:'get' 
 
     # Software Projects
     # match '/projects/software',  to:'projects#software',  via:'get'
