@@ -56,7 +56,7 @@ html{
     min-width:                  100%;
     min-height:                 100%;
     background:                 #333;
-    background:                 image-url("haiti0.jpg") no-repeat center center fixed; 
+    background:                 image-url("haiti3.jpg") no-repeat center center fixed; 
     -webkit-background-size:    cover;              
     -moz-background-size:       cover;
     -o-background-size:         cover;
@@ -249,35 +249,39 @@ nav ul ul{
     border-top:                 2px solid #095aa6;
     background:                 rgba(0, 0, 0, .65);
     text-align:                 center;
-    transition:                 all .5s;
-    -webkit-transition:         all .5s;
+    transition:                 all ease-in-out .5s;
+    -webkit-transition:         all ease-in-out .5s;
 }
 
 /* show second level on hover */
-nav ul li:hover > ul, 
+nav ul li:hover ul, 
 nav ul ul:hover{
     display:                    block;
+    transition:                 all ease-in-out .5s;
+    -webkit-transition:         all ease-in-out .5s;
 }
 
 /* show second level on hover (not homepage) */
-nav.not-home ul li:hover > ul, 
+nav.not-home ul li:hover ul, 
 nav.not-home ul ul:hover{
     display:                    block;
     position:                   absolute;
     top:                        70px;
     left:                       0px;
+    padding:                    0px 0px 0px 0px;
     border-top:                 2px solid rgba(255,0,0,0);
     border-bottom:              2px solid #c2cd23;
-    transition:                 all .5s;
-    -webkit-transition:         all .5s;
+    transition:                 all ease-in-out .5s;
+    -webkit-transition:         all ease-in-out .5s;
 }
 
 /* second level list items */
 nav ul li:hover ul li, 
 nav ul li ul:hover li{
-    height:                     50%;
-    margin:                     0px 0px;
-    padding:                    1% 3px;
+    display:                    inline;
+    float:                      none;
+    margin:                     10px 0px;
+    padding:                    1px 3px;
     transition:                 all 1s;
     -webkit-transition:         all 1s;
     border:                     2px solid rgba(0,0,0,0);
@@ -286,11 +290,12 @@ nav ul li ul:hover li{
 /* second level list items */
 nav.not-home ul li:hover ul li, 
 nav.not-home ul li ul:hover li{
+    display:                    inline;
     position:                   relative;
-    top:                        -10px;
-    height:                     100%;
-    margin:                     0px 0px;
-    padding:                    2% 3px 1% 3px;
+    top:                        10px;
+    float:                      none;
+    margin:                     1px 1px;
+    padding:                    3px 3px;
     transition:                 all 1s;
     -webkit-transition:         all 1s;
     border:                     2px solid rgba(0,0,0,0);
@@ -323,127 +328,6 @@ nav ul li ul:hover li a:hover{
     transition:                 all 1s;
     -webkit-transition:         all 1s;
 }
-
-nav ul li:hover ul li:first-child, 
-nav ul ul:hover li:first-child{
-    padding:                    1% 3px 1% 10%;
-}
-
-nav ul li:hover ul li:last-child, 
-nav ul ul:hover li:last-child{
-    padding:                    1% 10% 1% 3px;
-}
-
-
-/*
- * Navigation Menu - Third Level
- * 
- */
-
-nav ul ul ul{
-    display:                    none;
-    min-width:                      100%;
-    height:                     auto;
-    margin:                     0px 0px;
-    padding:                    auto;
-    position:                   absolute;
-    top:                        -52px;
-    left:                       0px;
-    border-top:                 2px solid #c2cd23;
-    background:                 rgba(0, 0, 0, .65);
-    text-align:                 center;
-    transition:                 all .5s;
-    -webkit-transition:         all .5s;
-}
-
-/* show 3rd level on hover */
-nav ul ul li:hover > ul, 
-nav ul ul ul:hover{
-    display:                    block;
-}
-
-/* show 3rd level on hover (not homepage) */
-nav.not-home ul ul li:hover > ul, 
-nav.not-home ul ul ul:hover{
-    display:                    block;
-    position:                   absolute;
-    padding:                    12px 0px 0px 0px;
-    top:                        42px;
-    left:                       0px;
-    border:                     1px solid #c2cd23;
-    border-bottom:              3px solid #c2cd23;
-    border-top:                 2px solid rgba(255,0,0,0);
-    border-radius:              0px 0px 10px 10px;
-    transition:                 all .5s;
-    -webkit-transition:         all .5s;
-}
-
-
-/* 3rd level list items */
-nav ul ul li:hover ul li, 
-nav ul ul li ul:hover li{
-    display:                    inline-block;
-    height:                     100%;
-    margin:                     0px 0px;
-    padding:                    1% 3px;
-    transition:                 all 1s;
-    -webkit-transition:         all 1s;
-    border:                     2px solid rgba(0,0,0,0);
-}
-
-/* 3rd level list items */
-nav.not-home ul ul li:hover ul li, 
-nav.not-home ul ul li ul:hover li{
-    display:                    inline-block;
-    position:                   relative;
-    top:                        -10px;
-    height:                     100%;
-    margin:                     0px 0px;
-    padding:                    2% 3px 1% 3px;
-    transition:                 all 1s;
-    -webkit-transition:         all 1s;
-    border:                     2px solid rgba(0,0,0,0);
-}
-
-
-/* 3rd level list items */
-nav ul ul li:hover ul li:hover, 
-nav ul ul li ul:hover li:hover{
-    border:                     2px solid rgba(0,0,0,0);
-    border-radius:              0px;
-}
-
-/* 3rd level anchors */
-nav ul ul li:hover ul li a, 
-nav ul ul li ul:hover li a{
-    margin:                     0px 10px;
-    padding:                    1px 1px;
-    color:                      #b5cde4;
-    border-bottom:              2px solid rgba(0,0,0,0);
-    transition:                 all 1s;
-    -webkit-transition:         all 1s;
-}
-
-/* 3rd level anchors on hover */
-nav ul ul li:hover ul li a:hover, 
-nav ul ul li ul:hover li a:hover{
-    color:                      #c2cd23;
-    border-bottom:              2px solid #b5cde4;
-    transition:                 all 1s;
-    -webkit-transition:         all 1s;
-}
-
-nav ul ul li:hover ul li:first-child, 
-nav ul ul ul:hover li:first-child{
-    padding:                    1% 3px 1% 10%;
-}
-
-nav ul ul li:hover ul li:last-child, 
-nav ul ul ul:hover li:last-child{
-    padding:                    1% 10% 1% 3px;
-}
-
-
 
 
 div.divider{
@@ -717,3 +601,25 @@ div.software-container{
     display:                    block;
 }
 
+
+nav.not-home span.nav{
+    display:                    inline;
+    width:                      80%;
+    position:                   absolute;
+    top:                        -11px;
+    left: 0px;
+    text-align:                 right;
+    background:                 none;
+    padding:                    15px 10% 0px 10%;
+}
+
+nav.home span.nav{
+    display:                    inline;
+    width:                      76%;
+    position:                   absolute;
+    top:                        0px;
+    left: 0px;
+    text-align:                 right;
+    background:                 none;
+    padding:                    15px 12% 20px 12%;
+}

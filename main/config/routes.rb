@@ -48,9 +48,22 @@ match '/projects', to:'static_pages#under_construction', via:'get'
     match '/projects/local',  to:'projects#local',  via:'get'
     # match '/projects/local', to:'static_pages#under_construction', via:'get' 
 
+        # Bithlo Aquaponics
+        # match '/projects/local/bithlo',  to:'projects#local_bithlo',  via:'get'
+        match '/projects/local/bithlo', to:'static_pages#under_construction', via:'get' 
+
     # International Projects (weather station, dr)
     match '/projects/international',  to:'projects#international',  via:'get'
     # match '/projects/international', to:'static_pages#under_construction', via:'get' 
+
+        # Mare Brignol, Haiti
+        # match '/projects/international/haiti',  to:'projects#intl_haiti',  via:'get'
+        match '/projects/international/haiti', to:'static_pages#under_construction', via:'get' 
+
+        # Dominican Republic
+        # match '/projects/international/dr',  to:'projects#intl_dr',  via:'get'
+        match '/projects/international/dr', to:'static_pages#under_construction', via:'get' 
+
 
     # Software Projects
     match '/projects/software',  to:'projects#software',  via:'get'
