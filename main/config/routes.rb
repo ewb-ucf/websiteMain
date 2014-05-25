@@ -45,28 +45,28 @@ match '/members', to:'static_pages#under_construction', via:'get'
 match '/projects', to:'static_pages#under_construction', via:'get' 
 
     # Local Projects (bithlo, rainwater catchment)
-    # match '/projects/local',  to:'projects#local',  via:'get'
-    match '/projects/local', to:'projects#local', via:'get' 
+    match '/projects/local',  to:'projects#local',  via:'get'
+    # match '/projects/local', to:'static_pages#under_construction', via:'get' 
 
     # International Projects (weather station, dr)
-    # match '/projects/international',  to:'projects#international',  via:'get'
-    match '/projects/international', to:'projects#international', via:'get' 
+    match '/projects/international',  to:'projects#international',  via:'get'
+    # match '/projects/international', to:'static_pages#under_construction', via:'get' 
 
     # Software Projects
-    # match '/projects/software',  to:'projects#software',  via:'get'
-    match '/projects/software', to:'projects#software', via:'get' 
+    match '/projects/software',  to:'projects#software',  via:'get'
+    # match '/projects/software', to:'static_pages#under_construction', via:'get' 
 
     # Other Projects
-    # match '/projects/other',  to:'projects#other',  via:'get'
-    match '/projects/other', to:'projects#other', via:'get' 
+    match '/projects/other',  to:'projects#other',  via:'get'
+    # match '/projects/other', to:'static_pages#under_construction', via:'get' 
 
 # Events
 # match '/events',  to:'events#show',  via:'get'
 match '/events', to:'static_pages#under_construction', via:'get' 
 
   # Workshops
-  # match '/workshops',  to:'events#workshops',  via:'get'
-  match '/workshops', to:'static_pages#under_construction', via:'get' 
+  match '/workshops',  to:'events#workshops',  via:'get'
+  # match '/workshops', to:'static_pages#under_construction', via:'get' 
 
   # Lectures
   # match '/lectures',  to:'events#lectures',  via:'get'
