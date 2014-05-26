@@ -36941,3 +36941,591 @@ Started GET "/assets/logo-circuit.jpg" for 127.0.0.1 at 2014-05-25 12:15:50 -040
 
 
 Started GET "/assets/logo-aid.png" for 127.0.0.1 at 2014-05-25 12:15:50 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-26 08:48:24 -0400
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.1.1) lib/active_record/migration.rb:389:in `check_pending!'
+  activerecord (4.1.1) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/admin48/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/admin48/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/admin48/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/admin48/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /home/admin48/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/admin48/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/admin48/.rvm/gems/ruby-2.1.2/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.7ms)
+  [1m[36m (131.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (133.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateContacts (20140510223634)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "contacts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140510223634"]]
+  [1m[35m (133.3ms)[0m  commit transaction
+Migrating to CreateMembers (20140510230255)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "members" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140510230255"]]
+  [1m[35m (142.4ms)[0m  commit transaction
+Migrating to CreateProjects (20140516121652)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140516121652"]]
+  [1m[35m (176.4ms)[0m  commit transaction
+Migrating to CreateWorkshops (20140516122953)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "workshops" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140516122953"]]
+  [1m[35m (163.4ms)[0m  commit transaction
+Migrating to CreateLectures (20140516123030)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "lectures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140516123030"]]
+  [1m[35m (163.9ms)[0m  commit transaction
+Migrating to CreateMedia (20140516124423)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  CREATE TABLE "media" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140516124423"]]
+  [1m[35m (161.3ms)[0m  commit transaction
+Migrating to CreateApplications (20140516125036)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "applications" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140516125036"]]
+  [1m[35m (165.1ms)[0m  commit transaction
+Migrating to AddSkillsToMember (20140516162411)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "members" ADD "skills" text
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140516162411"]]
+  [1m[35m (143.0ms)[0m  commit transaction
+Migrating to AddExperienceToMember (20140516162808)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "members" ADD "experience" text
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140516162808"]]
+  [1m[35m (131.7ms)[0m  commit transaction
+Migrating to AddPhoneToMember (20140516170435)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "members" ADD "phone" varchar(255)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140516170435"]]
+  [1m[35m (131.3ms)[0m  commit transaction
+Migrating to AddPersonalProjectsToMember (20140516171115)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "members" ADD "personalprojects" text
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140516171115"]]
+  [1m[35m (131.9ms)[0m  commit transaction
+Migrating to AddOtherInvolvementToMember (20140516171153)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "members" ADD "otherinvolvement" varchar(255)
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140516171153"]]
+  [1m[35m (131.8ms)[0m  commit transaction
+Migrating to AddTimeDedicationToMember (20140516172015)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "members" ADD "timededication" varchar(255)
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140516172015"]]
+  [1m[35m (132.0ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-26 08:48:54 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/_nav.html.erb (3.6ms)
+  Rendered static_pages/_footer.html.erb (0.6ms)
+  Rendered static_pages/home.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 835ms (Views: 824.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/contacts.css?body=1" for 127.0.0.1 at 2014-05-26 08:48:55 -0400
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-05-26 08:48:55 -0400
+
+
+Started GET "/assets/lectures.css?body=1" for 127.0.0.1 at 2014-05-26 08:48:55 -0400
+
+
+Started GET "/assets/members.css?body=1" for 127.0.0.1 at 2014-05-26 08:48:55 -0400
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-05-26 08:48:55 -0400
+
+
+Started GET "/assets/workshops.css?body=1" for 127.0.0.1 at 2014-05-26 08:48:55 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-26 08:48:55 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-26 08:48:55 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-26 08:48:55 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-26 08:48:55 -0400
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2014-05-26 08:48:55 -0400
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-05-26 08:48:55 -0400
+
+
+Started GET "/assets/lectures.js?body=1" for 127.0.0.1 at 2014-05-26 08:48:55 -0400
+
+
+Started GET "/assets/members.js?body=1" for 127.0.0.1 at 2014-05-26 08:48:55 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-05-26 08:48:55 -0400
+
+
+Started GET "/assets/workshops.js?body=1" for 127.0.0.1 at 2014-05-26 08:48:55 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-26 08:48:55 -0400
+
+
+Started GET "/assets/logo3.png" for 127.0.0.1 at 2014-05-26 08:48:55 -0400
+
+
+Started GET "/assets/haiti3.jpg" for 127.0.0.1 at 2014-05-26 08:48:55 -0400
+
+
+Started GET "/about" for 127.0.0.1 at 2014-05-26 08:49:04 -0400
+Processing by StaticPagesController#about as HTML
+  Rendered static_pages/_nav.html.erb (3.9ms)
+  Rendered static_pages/_footer.html.erb (0.6ms)
+  Rendered static_pages/about.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 140ms (Views: 128.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/logo3.png" for 127.0.0.1 at 2014-05-26 08:49:05 -0400
+
+
+Started GET "/assets/icon-water-blue.png" for 127.0.0.1 at 2014-05-26 08:49:05 -0400
+
+
+Started GET "/assets/icon-sanitation-blue.png" for 127.0.0.1 at 2014-05-26 08:49:05 -0400
+
+
+Started GET "/assets/icon-civil-orange.png" for 127.0.0.1 at 2014-05-26 08:49:05 -0400
+
+
+Started GET "/assets/icon-structures-green.png" for 127.0.0.1 at 2014-05-26 08:49:05 -0400
+
+
+Started GET "/assets/icon-energy-yellow.png" for 127.0.0.1 at 2014-05-26 08:49:05 -0400
+
+
+Started GET "/assets/icon-infosys-red.png" for 127.0.0.1 at 2014-05-26 08:49:05 -0400
+
+
+Started GET "/assets/icon-agriculture-grellow.png" for 127.0.0.1 at 2014-05-26 08:49:05 -0400
+
+
+Started GET "/assets/haiti2.jpg" for 127.0.0.1 at 2014-05-26 08:49:05 -0400
+
+
+Started GET "/contact" for 127.0.0.1 at 2014-05-26 08:49:07 -0400
+Processing by ContactsController#new as HTML
+  Rendered contacts/new.html.erb within layouts/application (55.1ms)
+Completed 200 OK in 103ms (Views: 81.9ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddTimeDedicationToMember (20140516172015)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "amembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime, "skills" text, "experience" text, "phone" varchar(255), "personalprojects" text, "otherinvolvement" varchar(255), "timededication" varchar(255)) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "members"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "members"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "members" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime, "skills" text, "experience" text, "phone" varchar(255), "personalprojects" text, "otherinvolvement" varchar(255)) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "amembers"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "amembers"[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140516172015'
+  [1m[36m (144.0ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddOtherInvolvementToMember (20140516171153)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "amembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime, "skills" text, "experience" text, "phone" varchar(255), "personalprojects" text, "otherinvolvement" varchar(255)) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "members"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "members"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "members" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime, "skills" text, "experience" text, "phone" varchar(255), "personalprojects" text) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "amembers"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "amembers"[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140516171153'
+  [1m[36m (171.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddPersonalProjectsToMember (20140516171115)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "amembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime, "skills" text, "experience" text, "phone" varchar(255), "personalprojects" text) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "members"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "members"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "members" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime, "skills" text, "experience" text, "phone" varchar(255)) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "amembers"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "amembers"[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140516171115'
+  [1m[36m (148.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddPhoneToMember (20140516170435)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "amembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime, "skills" text, "experience" text, "phone" varchar(255)) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "members"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "members"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "members" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime, "skills" text, "experience" text) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "amembers"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "amembers"[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140516170435'
+  [1m[36m (146.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddExperienceToMember (20140516162808)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "amembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime, "skills" text, "experience" text) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "members"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "members"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "members" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime, "skills" text) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "amembers"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "amembers"[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140516162808'
+  [1m[36m (144.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddSkillsToMember (20140516162411)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "amembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime, "skills" text) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "members"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "members"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "members" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "amembers"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "amembers"[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140516162411'
+  [1m[36m (143.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateApplications (20140516125036)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "applications"
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140516125036'[0m
+  [1m[35m (137.6ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateMedia (20140516124423)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "media"
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140516124423'[0m
+  [1m[35m (149.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateMedia (20140516124423)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "media" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140516124423"]]
+  [1m[36m (222.9ms)[0m  [1mcommit transaction[0m
+Migrating to CreateApplications (20140516125036)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "applications" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140516125036"]]
+  [1m[36m (165.3ms)[0m  [1mcommit transaction[0m
+Migrating to AddSkillsToMember (20140516162411)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "members" ADD "skills" text[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140516162411"]]
+  [1m[36m (165.4ms)[0m  [1mcommit transaction[0m
+Migrating to AddExperienceToMember (20140516162808)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "members" ADD "experience" text[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140516162808"]]
+  [1m[36m (143.0ms)[0m  [1mcommit transaction[0m
+Migrating to AddPhoneToMember (20140516170435)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "members" ADD "phone" varchar(255)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140516170435"]]
+  [1m[36m (144.7ms)[0m  [1mcommit transaction[0m
+Migrating to AddPersonalProjectsToMember (20140516171115)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "members" ADD "personalprojects" text[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140516171115"]]
+  [1m[36m (154.3ms)[0m  [1mcommit transaction[0m
+Migrating to AddOtherInvolvementToMember (20140516171153)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "members" ADD "otherinvolvement" varchar(255)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140516171153"]]
+  [1m[36m (165.4ms)[0m  [1mcommit transaction[0m
+Migrating to AddTimeDedicationToMember (20140516172015)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "members" ADD "timededication" varchar(255)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140516172015"]]
+  [1m[36m (165.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddTimeDedicationToMember (20140516172015)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "amembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime, "skills" text, "experience" text, "phone" varchar(255), "personalprojects" text, "otherinvolvement" varchar(255), "timededication" varchar(255)) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "members"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "members"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "members" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime, "skills" text, "experience" text, "phone" varchar(255), "personalprojects" text, "otherinvolvement" varchar(255)) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "amembers"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "amembers"[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140516172015'
+  [1m[36m (147.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddOtherInvolvementToMember (20140516171153)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "amembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime, "skills" text, "experience" text, "phone" varchar(255), "personalprojects" text, "otherinvolvement" varchar(255)) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "members"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "members"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "members" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime, "skills" text, "experience" text, "phone" varchar(255), "personalprojects" text) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "amembers"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "amembers"[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140516171153'
+  [1m[36m (151.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddPersonalProjectsToMember (20140516171115)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "amembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime, "skills" text, "experience" text, "phone" varchar(255), "personalprojects" text) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "members"[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "members"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "members" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime, "skills" text, "experience" text, "phone" varchar(255)) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "amembers"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "amembers"[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140516171115'
+  [1m[36m (136.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddPhoneToMember (20140516170435)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "amembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime, "skills" text, "experience" text, "phone" varchar(255)) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "members"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "members"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "members" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime, "skills" text, "experience" text) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "amembers"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "amembers"[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140516170435'
+  [1m[36m (138.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddExperienceToMember (20140516162808)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "amembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime, "skills" text, "experience" text) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "members"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "members"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "members" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime, "skills" text) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "amembers"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "amembers"[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140516162808'
+  [1m[36m (126.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddSkillsToMember (20140516162411)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "amembers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime, "skills" text) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "members"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "members"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "members" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "amembers"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "amembers"[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20140516162411'
+  [1m[36m (155.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (153.4ms)[0m  [1mCREATE TABLE "applications" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (189.1ms)[0m  CREATE TABLE "contacts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (166.9ms)[0m  [1mCREATE TABLE "lectures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (167.1ms)[0m  CREATE TABLE "media" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (155.8ms)[0m  [1mCREATE TABLE "members" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "password" varchar(255), "email" varchar(255), "gender" varchar(255), "pid" varchar(255), "points" integer, "aboutme" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (168.7ms)[0m  CREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (177.6ms)[0m  [1mCREATE TABLE "workshops" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (133.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (144.7ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (166.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140516125036')
+  [1m[36m (189.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140516121652')[0m
+  [1m[35m (190.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140516123030')
+  [1m[36m (178.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140516122953')[0m
+  [1m[35m (134.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140516124423')
+  [1m[36m (134.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140510223634')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2014-05-26 10:15:39 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/_nav.html.erb (3.5ms)
+  Rendered static_pages/_footer.html.erb (0.7ms)
+  Rendered static_pages/home.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 124ms (Views: 113.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/contacts.css?body=1" for 127.0.0.1 at 2014-05-26 10:15:39 -0400
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-05-26 10:15:39 -0400
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-05-26 10:15:39 -0400
+
+
+Started GET "/assets/workshops.css?body=1" for 127.0.0.1 at 2014-05-26 10:15:40 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-26 10:15:40 -0400
+
+
+Started GET "/assets/members.css?body=1" for 127.0.0.1 at 2014-05-26 10:15:40 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-26 10:15:40 -0400
+
+
+Started GET "/assets/lectures.css?body=1" for 127.0.0.1 at 2014-05-26 10:15:40 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-26 10:15:40 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-26 10:15:40 -0400
+
+
+Started GET "/assets/lectures.js?body=1" for 127.0.0.1 at 2014-05-26 10:15:40 -0400
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2014-05-26 10:15:40 -0400
+
+
+Started GET "/assets/members.js?body=1" for 127.0.0.1 at 2014-05-26 10:15:40 -0400
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-05-26 10:15:40 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-05-26 10:15:40 -0400
+
+
+Started GET "/assets/workshops.js?body=1" for 127.0.0.1 at 2014-05-26 10:15:40 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-26 10:15:40 -0400
+
+
+Started GET "/assets/logo3.png" for 127.0.0.1 at 2014-05-26 10:15:40 -0400
+
+
+Started GET "/assets/haiti3.jpg" for 127.0.0.1 at 2014-05-26 10:15:40 -0400
+
+
+Started GET "/members" for 127.0.0.1 at 2014-05-26 10:15:51 -0400
+Processing by StaticPagesController#under_construction as HTML
+  Rendered static_pages/under_construction.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/contacts.css?body=1" for 127.0.0.1 at 2014-05-26 10:15:51 -0400
+
+
+Started GET "/assets/events.css?body=1" for 127.0.0.1 at 2014-05-26 10:15:51 -0400
+
+
+Started GET "/assets/members.css?body=1" for 127.0.0.1 at 2014-05-26 10:15:51 -0400
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-05-26 10:15:51 -0400
+
+
+Started GET "/assets/lectures.css?body=1" for 127.0.0.1 at 2014-05-26 10:15:51 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-05-26 10:15:51 -0400
+
+
+Started GET "/assets/workshops.css?body=1" for 127.0.0.1 at 2014-05-26 10:15:51 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-05-26 10:15:51 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-05-26 10:15:51 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-05-26 10:15:51 -0400
+
+
+Started GET "/assets/contacts.js?body=1" for 127.0.0.1 at 2014-05-26 10:15:51 -0400
+
+
+Started GET "/assets/events.js?body=1" for 127.0.0.1 at 2014-05-26 10:15:51 -0400
+
+
+Started GET "/assets/lectures.js?body=1" for 127.0.0.1 at 2014-05-26 10:15:51 -0400
+
+
+Started GET "/assets/members.js?body=1" for 127.0.0.1 at 2014-05-26 10:15:51 -0400
+
+
+Started GET "/assets/workshops.js?body=1" for 127.0.0.1 at 2014-05-26 10:15:51 -0400
+
+
+Started GET "/assets/static_pages.js?body=1" for 127.0.0.1 at 2014-05-26 10:15:51 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-05-26 10:15:51 -0400
+
+
+Started GET "/assets/haiti3.jpg" for 127.0.0.1 at 2014-05-26 10:15:51 -0400

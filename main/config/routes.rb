@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 # As the pages are created simply comment out the construction route
 # and uncomment the route to the actual page
 
+# devise_for :member
+
 # Home Page
 match '/', to:'static_pages#home', via:'get' 
   

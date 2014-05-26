@@ -12,6 +12,7 @@ gem 'simple_form'
 gem 'protected_attributes'
 
 gem "cancan"
+#gem "devise"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
