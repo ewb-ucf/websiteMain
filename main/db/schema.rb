@@ -33,19 +33,6 @@ ActiveRecord::Schema.define(version: 20140516125036) do
     t.datetime "updated_at"
   end
 
-  create_table "members", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "password"
-    t.string   "email"
-    t.string   "gender"
-    t.string   "pid"
-    t.integer  "points"
-    t.text     "aboutme"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "projects", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"

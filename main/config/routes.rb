@@ -76,8 +76,8 @@ match '/projects', to:'static_pages#under_construction', via:'get'
     # match '/projects/other', to:'static_pages#under_construction', via:'get' 
 
 # Events
-# match '/events',  to:'events#show',  via:'get'
-match '/events', to:'static_pages#under_construction', via:'get' 
+match '/events',  to:'events#show',  via:'get'
+# match '/events', to:'static_pages#under_construction', via:'get' 
 
   # Workshops
   match '/workshops',  to:'events#workshops',  via:'get'
